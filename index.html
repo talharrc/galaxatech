@@ -1,305 +1,125 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Zap, 
-  Code, 
-  LineChart, 
-  Cpu, 
-  ShieldCheck, 
-  ChevronRight, 
-  Layers, 
-  Target, 
-  Globe, 
-  Smartphone,
-  Search,
-  Settings,
-  ArrowUpRight,
-  Plus,
-  Rocket,
-  Award,
-  Globe2,
-  Mail,
-  Send
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxa Tech | Solution to every marketing Conundrums</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .bg-dark { background-color: #050505; }
+        .selection-red::selection { background-color: #dc2626; color: white; }
+    </style>
+</head>
+<body class="bg-dark text-white selection-red">
 
-const App = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  
-  // Email security: Base64 encoding for talharrc@gmail.com
-  const encodedEmail = "dGFsaGFycmNAZ21haWwuY29t"; 
-  
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // ফাংশন যা ইমেইল ডিকোড করে মেইলবক্স ওপেন করবে
-  const handleDirectEmail = (e) => {
-    if (e) e.preventDefault();
-    const email = atob(encodedEmail);
-    window.location.href = `mailto:${email}?subject=Business Inquiry from Website`;
-  };
-
-  const services = [
-    {
-      icon: <Smartphone className="text-red-600" />,
-      title: "App Development",
-      desc: "Amra shudhu app banai na, ekti purnango ecosystem toiri kori. Design theke development—shob amader dayitve."
-    },
-    {
-      icon: <Search className="text-red-600" />,
-      title: "SEO Mastery",
-      desc: "Apnar business-ke Google search-er shirshe niye ashai amader lokkho. Data-driven marketing solution."
-    },
-    {
-      icon: <Cpu className="text-red-600" />,
-      title: "AI Automation",
-      desc: "Bhabishyat proyuktir shathe apnar business-ke smart korun amader custom AI tools-er madhyome."
-    },
-    {
-      icon: <LineChart className="text-red-600" />,
-      title: "Digital Marketing",
-      desc: "Sothik audience-er kache pouchate amader social media ebong growth strategy otuloniyo."
-    },
-    {
-      icon: <Settings className="text-red-600" />,
-      title: "Maintenance",
-      desc: "Project launch-er por apnar nishchinto ghum nishchit korte amra di lifetime support o maintenance."
-    },
-    {
-      icon: <Layers className="text-red-600" />,
-      title: "Product Strategy",
-      desc: "Marketing conundrum shomadhan korte amader royeche obhiggo product strategist team."
-    }
-  ];
-
-  const values = [
-    {
-      icon: <Globe2 className="text-red-500" />,
-      title: "Global Expertise",
-      desc: "Antorjatik bajare dirgho shomoy kaj korar obhiggota ekhon Bangladesh-e."
-    },
-    {
-      icon: <Target className="text-red-500" />,
-      title: "Results Driven",
-      desc: "Shudhu kaj noy, amra business-er prokrito growth ebong conversion-e bisshashi."
-    },
-    {
-      icon: <ShieldCheck className="text-red-500" />,
-      title: "Integrity",
-      desc: "2022 saal theke amra bisshostotar shathe client-der service dichi."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-red-600 selection:text-white scroll-smooth">
-      {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-md py-4' : 'bg-transparent py-6'}`}>
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-black tracking-tighter uppercase cursor-default">Galaxa<span className="text-red-600">Tech</span></span>
-          </div>
-          <div className="hidden md:flex items-center gap-10 text-[10px] font-black tracking-[0.2em] uppercase text-slate-400">
-            <a href="#home" className="hover:text-red-600 transition-colors">Home</a>
-            <a href="#services" className="hover:text-red-600 transition-colors">Services</a>
-            <a href="#about" className="hover:text-red-600 transition-colors">About Us</a>
-            <a href="#contact-section" className="px-6 py-2 border border-red-600 text-red-600 hover:bg-red-600 hover:text-white transition-all rounded">Contact Us</a>
-          </div>
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl font-black tracking-tighter uppercase cursor-default">Galaxa<span class="text-red-600">Tech</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-10 text-[10px] font-black tracking-[0.2em] uppercase text-slate-400">
+                <a href="#home" class="hover:text-red-600 transition-colors">Home</a>
+                <a href="#services" class="hover:text-red-600 transition-colors">Services</a>
+                <a href="#about" class="hover:text-red-600 transition-colors">About Us</a>
+                <a href="mailto:talharrc@gmail.com" class="px-6 py-2 border border-red-600 text-red-600 hover:bg-red-600 hover:text-white transition-all rounded">Contact Us</a>
+            </div>
         </div>
-      </nav>
+    </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="relative pt-40 pb-20 px-6 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-red-600/5 rounded-full blur-[120px] -z-10" />
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-600/10 border border-red-600/20 text-red-500 rounded text-[10px] font-black uppercase tracking-widest">
-              <Zap size={14} /> Established 2022
+    <section id="home" class="relative pt-40 pb-20 px-6 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-red-600/5 rounded-full blur-[120px] -z-10"></div>
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-red-600/10 border border-red-600/20 text-red-500 rounded text-[10px] font-black uppercase tracking-widest">
+                    <i data-lucide="zap" class="w-4 h-4"></i> Established 2022
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase">
+                    Solution to every marketing <span class="text-red-600 italic font-light">Conundrums.</span>
+                </h1>
+                <p class="text-lg text-slate-400 font-medium max-w-lg leading-relaxed">
+                    International market-e amader shofol pothcholar por, Galaxa Tech ekhon Bangladesh-e niye esheche bisshomaner tech solution.
+                </p>
+                <div class="flex flex-col sm:row gap-4 pt-4">
+                    <a href="mailto:talharrc@gmail.com" class="px-8 py-5 bg-red-600 text-white font-black uppercase tracking-widest text-sm hover:bg-red-700 transition-all flex items-center justify-center gap-3 w-max">
+                        Let's Build Something <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
             </div>
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase">
-              Solution to every marketing <span className="text-red-600 italic font-light">Conundrums.</span>
-            </h1>
-            <p className="text-lg text-slate-400 font-medium max-w-lg leading-relaxed">
-              International market-e amader shofol pothcholar por, Galaxa Tech ekhon Bangladesh-e niye esheche bisshomaner tech solution.
-            </p>
-            <div className="flex flex-col sm:row gap-4 pt-4">
-              <a href="#contact-section" className="px-8 py-5 bg-red-600 text-white font-black uppercase tracking-widest text-sm hover:bg-red-700 transition-all flex items-center justify-center gap-3">
-                Let's Build Something <ArrowUpRight size={18} />
-              </a>
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-red-600 to-transparent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <div class="relative bg-black border border-white/5 rounded-2xl p-4 overflow-hidden">
+                    <div class="h-[400px] bg-white/5 rounded-xl flex items-center justify-center overflow-hidden">
+                        <div class="text-center space-y-4">
+                            <i data-lucide="rocket" class="w-16 h-16 mx-auto text-red-600 animate-bounce"></i>
+                            <p class="text-xs font-black uppercase tracking-[0.3em] text-slate-500 underline underline-offset-8 decoration-red-600">Global Expertise, Local Impact</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-transparent rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <div className="relative bg-black border border-white/5 rounded-2xl p-4 overflow-hidden">
-               <div className="h-[400px] bg-white/5 rounded-xl flex items-center justify-center overflow-hidden">
-                  <div className="text-center space-y-4">
-                     <Rocket size={60} className="mx-auto text-red-600 animate-bounce" />
-                     <p className="text-xs font-black uppercase tracking-[0.3em] text-slate-500 underline underline-offset-8 decoration-red-600">Global Expertise, Local Impact</p>
-                  </div>
-               </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      {/* Core Services */}
-      <section id="services" className="py-32 px-6 border-y border-white/5 bg-[#080808]">
-        <div className="max-w-7xl mx-auto space-y-20">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">Our Expertise</h2>
-              <div className="h-1 w-20 bg-red-600" />
+    <section id="services" class="py-32 px-6 border-y border-white/5 bg-[#080808]">
+        <div class="max-w-7xl mx-auto space-y-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                <div class="space-y-4">
+                    <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter">Our Expertise</h2>
+                    <div class="h-1 w-20 bg-red-600"></div>
+                </div>
+                <p class="max-w-md text-slate-400 font-medium italic">"Apnar confusion amader solution"—Marketing conundrum theke AI automation porjonto shob amader hater muthoy.</p>
             </div>
-            <p className="max-w-md text-slate-400 font-medium italic">"Apnar confusion amader solution"—Marketing conundrum theke AI automation porjonto shob amader hater muthoy.</p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, i) => (
-              <div key={i} className="group p-10 bg-black border border-white/5 rounded-3xl hover:border-red-600/50 transition-all duration-500 relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
-                  <Plus className="text-red-600" />
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group p-10 bg-black border border-white/5 rounded-3xl hover:border-red-600/50 transition-all duration-500 relative">
+                    <div class="mb-8 w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-red-600 transition-all">
+                        <i data-lucide="smartphone" class="text-red-600 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-black uppercase mb-4 tracking-tight">App Development</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium">Amra shudhu app banai na, ekti purnango ecosystem toiri kori.</p>
                 </div>
-                <div className="mb-8 w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-red-600 group-hover:text-white transition-all duration-500">
-                  {service.icon}
+                
+                <div class="group p-10 bg-black border border-white/5 rounded-3xl hover:border-red-600/50 transition-all duration-500 relative">
+                    <div class="mb-8 w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-red-600 transition-all">
+                        <i data-lucide="search" class="text-red-600 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-black uppercase mb-4 tracking-tight">SEO Mastery</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium">Apnar business-ke Google search-er shirshe niye ashai amader lokkho.</p>
                 </div>
-                <h3 className="text-2xl font-black uppercase mb-4 tracking-tight">{service.title}</h3>
-                <p className="text-slate-500 leading-relaxed font-medium">{service.desc}</p>
-              </div>
-            ))}
-          </div>
+
+                <div class="group p-10 bg-black border border-white/5 rounded-3xl hover:border-red-600/50 transition-all duration-500 relative">
+                    <div class="mb-8 w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-red-600 transition-all">
+                        <i data-lucide="cpu" class="text-red-600 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-black uppercase mb-4 tracking-tight">AI Automation</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium">Bhabishyat proyuktir shathe apnar business-ke smart korun amader AI tools-er madhyome.</p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      {/* About Us Section */}
-      <section id="about" className="py-32 px-6 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative order-2 lg:order-1">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="h-64 bg-white/5 rounded-3xl border border-white/10 flex flex-col items-center justify-center p-6 text-center">
-                  <Award size={48} className="text-red-600 mb-4" />
-                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Int. Experience</p>
-                </div>
-                <div className="h-40 bg-red-600 rounded-3xl p-6 flex flex-col justify-end">
-                  <p className="text-4xl font-black italic">2022</p>
-                  <p className="text-[10px] font-black uppercase tracking-widest">Start of Journey</p>
-                </div>
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="h-40 bg-white/10 rounded-3xl p-6 flex flex-col justify-end">
-                   <p className="text-4xl font-black italic">BD</p>
-                   <p className="text-[10px] font-black uppercase tracking-widest">Now Locally Serving</p>
-                </div>
-                <div className="h-64 bg-white/5 rounded-3xl border border-white/10 flex flex-col items-center justify-center p-6 text-center">
-                   <Globe2 size={48} className="text-red-600 mb-4" />
-                   <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Global Mindset</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="space-y-10 order-1 lg:order-2">
-            <div className="space-y-4">
-              <span className="text-red-600 font-black tracking-[0.3em] uppercase text-xs">The Galaxa Story</span>
-              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mt-2">Born in <span className="text-red-600">2022.</span> Reimagined for <span className="text-red-600">Bangladesh.</span></h2>
-            </div>
-            <p className="text-slate-400 text-lg leading-relaxed">
-              Galaxa Tech-er jatra shuru hoyeche 2022 saale, antorjatik bajare digital solution prodaner lokkho niye. Bideshe shofolbhabe vibhinno project shesh korar por, amra ekhon amader orjito obhiggota niye kaj korchi Bangladesh-e.
-            </p>
-            <div className="grid sm:grid-cols-1 gap-6">
-              {values.map((value, i) => (
-                <div key={i} className="flex gap-6 items-start p-6 bg-white/5 rounded-2xl border border-white/5">
-                  <div className="mt-1">{value.icon}</div>
-                  <div>
-                    <h4 className="font-black uppercase tracking-tight text-lg">{value.title}</h4>
-                    <p className="text-slate-500 text-sm font-medium">{value.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    <footer class="py-20 px-6 bg-black border-t border-white/5 text-center">
+        <span class="text-2xl font-black tracking-tighter uppercase">Galaxa<span class="text-red-600">Tech</span></span>
+        <p class="text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mt-4">© 2026 Galaxa Tech. All rights reserved.</p>
+    </footer>
 
-      {/* Contact Section */}
-      <section id="contact-section" className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-20">
-            <div className="space-y-8">
-              <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">Ready to <br/><span className="text-red-600">Innovate?</span></h2>
-              <p className="text-slate-400 text-lg max-w-md font-medium">Apnar poroborti boro idea niye amader shathe jogajog korun. Amra prostut apnar business-ke notun uchotay niye jete.</p>
-              
-              <div className="space-y-6 pt-8">
-                <button 
-                  onClick={handleDirectEmail} 
-                  className="flex items-center gap-4 group cursor-pointer w-full text-left bg-white/5 p-4 rounded-xl border border-transparent hover:border-red-600/50 transition-all"
-                >
-                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center group-hover:bg-red-600 transition-all">
-                    <Mail size={20} className="text-red-600 group-hover:text-white" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">Contact Method</p>
-                    <p className="font-bold text-lg">Send us an Email</p>
-                  </div>
-                </button>
-              </div>
-            </div>
+    <script>
+        // Icons initialize
+        lucide.createIcons();
 
-            <div className="bg-white/5 p-8 md:p-12 rounded-[2rem] border border-white/10 flex flex-col items-center justify-center text-center space-y-6">
-                <div className="w-20 h-20 bg-red-600/10 rounded-full flex items-center justify-center">
-                    <Mail size={40} className="text-red-600" />
-                </div>
-                <h3 className="text-2xl font-black uppercase tracking-tight">Direct Connection</h3>
-                <p className="text-slate-400 font-medium">Nicher button-e click korle shorasori apnar mailbox open hoye jabe. Kono form puron charai amader message পাঠান.</p>
-                <button 
-                  onClick={handleDirectEmail}
-                  className="px-10 py-5 bg-red-600 text-white font-black uppercase tracking-widest text-sm hover:bg-red-700 transition-all rounded-xl flex items-center gap-3"
-                >
-                  Open Mailbox <Send size={18} />
-                </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-20 px-6 bg-black border-t border-white/5">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-black tracking-tighter uppercase">Galaxa<span className="text-red-600">Tech</span></span>
-            </div>
-            <p className="text-slate-500 font-medium text-sm leading-relaxed">
-              Solution to every marketing conundrum.
-            </p>
-          </div>
-          <div className="space-y-6 text-slate-400 text-sm font-bold uppercase">
-             <h4 className="text-white">Quick Links</h4>
-             <a href="#home" className="block hover:text-red-600">Home</a>
-             <a href="#services" className="block hover:text-red-600">Services</a>
-             <a href="#about" className="block hover:text-red-600">About</a>
-          </div>
-          <div className="space-y-6">
-            <h4 className="font-black uppercase tracking-widest text-xs">Connect</h4>
-            <ul className="space-y-4 text-slate-400 text-sm font-bold uppercase">
-              <li><a href="#" className="hover:text-red-600 transition-colors">Facebook</a></li>
-              <li><a href="#" className="hover:text-red-600 transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-red-600 transition-colors">Instagram</a></li>
-            </ul>
-          </div>
-          <div className="space-y-6">
-            <h4 className="font-black uppercase tracking-widest text-xs text-white">Office</h4>
-            <p className="text-slate-400 text-sm font-bold uppercase tracking-wider">
-              130/1 West Dolairpar,<br/> Dhaka 1204, Bangladesh
-            </p>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto pt-12 border-t border-white/5 flex flex-col md:row justify-between items-center gap-6">
-          <p className="text-slate-600 text-[10px] font-black uppercase tracking-[0.2em]">© 2026 Galaxa Tech. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default App;
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-black/90', 'backdrop-blur-md', 'py-4');
+                nav.classList.remove('bg-transparent', 'py-6');
+            } else {
+                nav.classList.remove('bg-black/90', 'backdrop-blur-md', 'py-4');
+                nav.classList.add('bg-transparent', 'py-6');
+            }
+        });
+    </script>
+</body>
+</html>
